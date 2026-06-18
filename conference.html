@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference on Endangered Languages — Lost Worlds Institute</title>
+  <meta name="description" content="LWI Conference on Endangered Languages — April 5, 2026 at Harvard University (Fong Auditorium). Keynote by Dr. Kaden Holladay, Manx research presentation by Misha Auchynnikau & Phoebe Austin, and The Care Lab.">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .conf-event-block { border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:var(--s8); }
+    .conf-event-header { display:flex; align-items:center; gap:var(--s4); padding:var(--s6); background:var(--bg-alt); border-bottom:1px solid var(--border); }
+    .conf-event-num { width:44px; height:44px; border-radius:50%; background:var(--accent); color:#000; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .conf-event-title { font-size:20px; font-weight:700; color:var(--text); }
+    .conf-event-subtitle { font-size:13px; color:var(--text-muted); margin-top:2px; }
+    .conf-event-body { padding:var(--s6); }
+    .conf-photo { width:100%; border-radius:10px; border:1px solid var(--border); display:block; object-fit:cover; max-height:420px; margin:var(--s5) 0; }
+    .slide-viewer { background:var(--bg-alt); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin:var(--s5) 0; }
+    .slide-viewer-bar { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; border-bottom:1px solid var(--border); background:var(--surface); }
+    .slide-viewer-title { font-family:var(--font-mono); font-size:12px; color:var(--text-muted); }
+    .slide-dots { display:flex; gap:6px; }
+    .slide-dot { width:8px; height:8px; border-radius:50%; background:var(--border); cursor:pointer; transition:background .2s; }
+    .slide-dot.active { background:var(--accent); }
+    .slide-track { display:flex; transition:transform .4s cubic-bezier(.4,0,.2,1); }
+    .slide-frame { min-width:100%; padding:var(--s6) var(--s7); box-sizing:border-box; }
+    .slide-num { font-family:var(--font-mono); font-size:11px; color:var(--text-muted); margin-bottom:var(--s2); }
+    .slide-heading { font-size:20px; font-weight:700; color:var(--accent); margin-bottom:var(--s3); }
+    .slide-body { font-size:14px; color:var(--text-secondary); line-height:1.7; }
+    .slide-body ul { margin:var(--s2) 0; padding-left:20px; }
+    .slide-body li { margin-bottom:6px; }
+    .slide-tag { display:inline-block; padding:2px 8px; border:1px solid var(--accent); border-radius:4px; color:var(--accent); font-size:12px; font-family:var(--font-mono); margin:2px; }
+    .slide-nav { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; border-top:1px solid var(--border); }
+    .slide-nav button { background:transparent; border:1px solid var(--border); color:var(--text); padding:6px 16px; border-radius:6px; cursor:pointer; font-size:13px; transition:border-color .2s,color .2s; }
+    .slide-nav button:hover { border-color:var(--accent); color:var(--accent); }
+    .slide-nav button:disabled { opacity:.3; cursor:default; }
+    .slide-counter { font-family:var(--font-mono); font-size:12px; color:var(--text-muted); }
+    .handout-embed { background:var(--bg-alt); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin:var(--s5) 0; }
+    .handout-bar { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; border-bottom:1px solid var(--border); background:var(--surface); }
+    .handout-bar-label { font-family:var(--font-mono); font-size:12px; color:var(--text-muted); }
+    .handout-bar a { font-size:12px; color:var(--accent); text-decoration:none; }
+    .handout-bar a:hover { text-decoration:underline; }
+    .carelab-link { display:inline-flex; align-items:center; gap:8px; background:var(--bg-alt); border:1px solid var(--accent); border-radius:8px; padding:10px 18px; color:var(--accent); text-decoration:none; font-size:14px; font-family:var(--font-mono); margin-top:var(--s4); transition:background .2s,transform .2s; }
+    .carelab-link:hover { background:rgba(108,182,255,.1); transform:translateY(-2px); }
+    .uni-logo-row { display:flex; flex-wrap:wrap; gap:var(--s4); margin-top:var(--s5); }
+    .uni-logo-chip { display:flex; align-items:center; gap:10px; background:var(--bg-alt); border:1px solid var(--border); border-radius:8px; padding:10px 14px; transition:border-color .2s,transform .2s; }
+    .uni-logo-chip:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .uni-logo-chip img { width:22px; height:22px; border-radius:3px; }
+    .uni-logo-chip span { font-size:13px; color:var(--text-secondary); font-weight:500; }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a href="./index.html" class="nav-brand">
+      <img src="https://api.typedream.com/v0/document/public/0dffe836-4bc7-4b15-8adf-949122a68dd0/2zkjkLvWa80cRS1pdroeiqAFVVc_JustSymbol_LWI.png" alt="" aria-hidden="true" style="width:28px;height:28px;object-fit:contain;">
+      Lost Worlds Institute
+    </a>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li><li><a href="./about.html">About</a></li>
+      <li><a href="https://www.lostworldsmag.com/" target="_blank" rel="noopener">Magazine</a></li><li><a href="./events.html">Events</a></li>
+      <li><a href="./conference.html" class="active">Conference</a></li><li><a href="./mission.html">Mission</a></li>
+      <li><a href="./resources.html">Resources</a></li><li><a href="./impact.html">Impact</a></li>
+    </ul>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBSyi9M5kKnSGw1FPOtSDCjDhUpy1O4b0QwrljfssKAHtf9Q/viewform" target="_blank" rel="noopener" class="btn btn-accent btn-sm nav-cta">Join Us</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="./index.html">Home</a><a href="./about.html">About</a>
+  <a href="https://www.lostworldsmag.com/" target="_blank" rel="noopener">Magazine</a><a href="./events.html">Events</a>
+  <a href="./conference.html">Conference</a><a href="./mission.html">Mission</a>
+  <a href="./resources.html">Resources</a><a href="./impact.html">Impact</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBSyi9M5kKnSGw1FPOtSDCjDhUpy1O4b0QwrljfssKAHtf9Q/viewform" target="_blank" rel="noopener" class="btn btn-accent" style="text-align:center;justify-content:center;">Join Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-eyebrow">April 5, 2026 &nbsp;&middot;&nbsp; Fong Auditorium, Harvard University &nbsp;&middot;&nbsp; Cambridge, MA</span>
+    <h1>LWI <em>Conference on</em><br><em>Endangered Languages</em></h1>
+    <p>Our inaugural in-person conference brought together students, scholars, and academic partners for a full day of language documentation, research presentations, and a live transcription workshop. Sponsored by Harvard&rsquo;s Department of Linguistics.</p>
+    <div class="page-hero-stats">
+      <div class="stat-pill">Harvard University</div>
+      <div class="stat-pill">Fong Auditorium</div>
+      <div class="stat-pill">April 5, 2026</div>
+      <div class="stat-pill">Cambridge, MA</div>
+    </div>
+  </div>
+</section>
+
+<!-- THANK YOU NOTE -->
+<section class="section" style="padding-top:var(--s6);padding-bottom:var(--s4);">
+  <div class="container" style="max-width:860px;">
+    <div class="lwi-quote" style="margin:0;">
+      <p style="font-size:15px;">&ldquo;Thank you to <strong>Dr. Kaden Holladay</strong> for presenting &amp; <strong>Harvard&rsquo;s Department of Linguistics</strong> for allowing us to use the space &mdash; Fong Auditorium &mdash; on campus!&rdquo;</p>
+      <div class="quote-attr" style="margin-top:var(--s3);">&mdash; Lost Worlds Institute</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCE RECAP -->
+<section class="section">
+  <div class="container" style="max-width:860px;">
+
+    <div class="section-head" style="text-align:left;margin-bottom:var(--s7);">
+      <span class="section-eyebrow">Conference Recap</span>
+      <h2 class="section-title">What Happened at the Conference</h2>
+      <p style="color:var(--text-secondary);font-size:15px;line-height:1.8;">The conference featured three programming blocks: a keynote lecture from a Harvard linguist, a student research presentation, and The Care Lab community transcription activity.</p>
+    </div>
+
+    <!-- BLOCK 1: DR. HOLLADAY -->
+    <div class="conf-event-block" id="keynote">
+      <div class="conf-event-header">
+        <div class="conf-event-num">1</div>
+        <div>
+          <div class="conf-event-title">Keynote: Dr. Kaden Holladay</div>
+          <div class="conf-event-subtitle">Harvard University &nbsp;&middot;&nbsp; Department of Linguistics</div>
+        </div>
+      </div>
+      <div class="conf-event-body">
+        <img src="./assets/images/holladay_.jpeg"
+             alt="Dr. Kaden Holladay drawing an Eskimo-Aleut language tree on the whiteboard at Harvard"
+             class="conf-photo" loading="eager">
+
+        <p style="color:var(--text-secondary);line-height:1.85;font-size:15px;margin-bottom:var(--s4);">
+          <strong>Dr. Kaden Holladay</strong>, a linguist and lecturer at Harvard University, presented a talk on <strong>incorporation</strong>, focusing on Eskimoan. He shared a handout with variations on phrases to express the idea of linguistic &ldquo;scope.&rdquo; Then, using more puzzles, Dr. Holladay connected this to incorporation — invoking intuition in this area of linguistics.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.85;font-size:15px;margin-bottom:var(--s5);">
+          The session gave students a live demonstration of the analytical thinking that drives linguistic research — connecting patterns across languages to reveal how human grammar organizes meaning. Dr. Holladay&rsquo;s puzzle-based style made abstract concepts in morphosyntax immediately tangible for our high school researchers.
+        </p>
+
+        <div class="handout-embed">
+          <div class="handout-bar">
+            <span class="handout-bar-label">Materials &mdash; Dr. Holladay&rsquo;s Handout: Incorporation and Meaning in Eskimoan</span>
+            <a href="./assets/docs/holladay-handout.pdf" target="_blank" rel="noopener">Open PDF &rarr;</a>
+          </div>
+          <iframe
+            src="./assets/docs/holladay-handout.pdf"
+            width="100%"
+            height="520"
+            style="border:0;display:block;"
+            title="Dr. Holladay Handout — Incorporation and Meaning in Eskimoan"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 2: MANX RESEARCH PRESENTATION -->
+    <div class="conf-event-block" id="manx-presentation">
+      <div class="conf-event-header">
+        <div class="conf-event-num">2</div>
+        <div>
+          <div class="conf-event-title">Student Research Presentation: Manx</div>
+          <div class="conf-event-subtitle">Misha Auchynnikau &amp; Phoebe Austin &nbsp;&middot;&nbsp; Mentored by Madeline Snigaroff (UChicago PhD Candidate)</div>
+        </div>
+      </div>
+      <div class="conf-event-body">
+        <img src="./assets/images/presentation_.jpeg"
+             alt="Misha Auchynnikau presenting the Manx Research Presentation at Harvard's Fong Auditorium, with Phoebe Austin at the podium"
+             class="conf-photo" loading="eager">
+
+        <p style="color:var(--text-secondary);line-height:1.85;font-size:15px;margin-bottom:var(--s4);">
+          <strong>Misha Auchynnikau</strong>, Co-Director of Outreach, and <strong>Phoebe Austin</strong>, Manx researcher, presented their research on Manx, a Goidelic language. During their research process, the two led their six-person team and collaborated with <strong>Ms. Madeline Snigaroff</strong>, a PhD candidate from UChicago who mentored the group.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.85;font-size:15px;margin-bottom:var(--s5);">
+          Their slides from the conference are below. Use the arrows to scroll through the presentation:
+        </p>
+
+        <!-- EMBED: Office Online viewer (replace DEPLOYED_URL when live) -->
+        <!-- Fallback: interactive HTML slide viewer -->
+        <div class="slide-viewer" role="region" aria-label="Manx Research Presentation slides">
+          <div class="slide-viewer-bar">
+            <span class="slide-viewer-title">Manx Research Presentation &mdash; Misha Auchynnikau &amp; Phoebe Austin</span>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="slide-dots" id="slide-dots"></div>
+              <a href="./assets/docs/manx-research-presentation.pptx" download style="font-size:11px;color:var(--accent);font-family:var(--font-mono);">&#8595; Download</a>
+            </div>
+          </div>
+          <div style="overflow:hidden;">
+            <div class="slide-track" id="slide-track">
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 01 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Background of the Manx Language</div>
+                <div class="slide-body">
+                  <p>Manx (also known as <em>Gaelg</em>) is a Goidelic language likely derived from Primitive Irish, related to Irish and Scots Gaelic. Believed to have originated around the 13th century AD, with first recorded usage in 1615.</p>
+                  <ul>
+                    <li>From the 15th to 20th centuries, Manx diverged considerably from Irish and Scots Gaelic.</li>
+                    <li>During the 18th century, England suppressed Manx in schools &amp; churches on the island.</li>
+                    <li>In 2009, UNESCO incorrectly declared Manx extinct — sparking outrage and renewed effort.</li>
+                    <li>The 21st century has seen increased revitalization, including by Lost Worlds Institute.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 02 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Overview of Manx Culture</div>
+                <div class="slide-body">
+                  <p>Many aspects of Manx culture derive from its Gaelic and Celtic roots, as well as its proximity to the United Kingdom.</p>
+                  <ul>
+                    <li>Most surviving literature has a religious context — primarily Anglican Christianity.</li>
+                    <li>Traditional foods: smoked fish, scallops (Manx Queenies), and Bonnag (traditional bread).</li>
+                    <li>Folklore: <em>Moddey Dhoo</em> (ghost-black dog of Peel Castle), <em>Glashtyn</em> (water-dwelling shapeshifter).</li>
+                    <li>The Isle hosts the TT motorcycle race since 1907 — a pillar of Island identity and economy.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 03 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Research &amp; Documentation Process</div>
+                <div class="slide-body">
+                  <p>LWI&rsquo;s three-stage research methodology:</p>
+                  <ul>
+                    <li><strong>1. Parsing Online Sources</strong> — Student researchers parse credible linguistic papers.</li>
+                    <li><strong>2. Compiling Shared Findings</strong> — Researchers compile into shared documents and mutually review.</li>
+                    <li><strong>3. Formatting with Experts</strong> — Research is typed and formatted with PhD mentor guidance (Ms. Madeline Snigaroff, UChicago).</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 04 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Phonology &amp; Orthography</div>
+                <div class="slide-body">
+                  <p><strong>Phonology:</strong> Manx distinguishes &ldquo;slender&rdquo; vs &ldquo;broad&rdquo; consonants — a feature shared with Irish and Scots Gaelic that fundamentally shapes the phonemic inventory.</p>
+                  <p style="margin-top:var(--s3);"><strong>Orthography</strong> — Notable features:</p>
+                  <ul>
+                    <li><span class="slide-tag">Ç ç</span> (couyll lesh cedilla) denotes /t&#643;/ in the digraph [çh]</li>
+                    <li>Diaeresis [&#x308;] separates vowel sounds and marks irregular plural formations</li>
+                    <li>Spelling conventions remain unstandardized — an active area of debate among speakers</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 05 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Morphology — Nouns &amp; Verbs</div>
+                <div class="slide-body">
+                  <p><strong>Noun Classes:</strong> 5 classes with subclasses. Classes make no masculine/feminine distinction.</p>
+                  <p style="margin-top:var(--s3);"><strong>Verb System:</strong></p>
+                  <ul>
+                    <li><strong>Aspects:</strong> Simple, Progressive, Perfect, Perfect Progressive</li>
+                    <li><strong>Moods:</strong> Indicative, Imperative, Conditional, Interrogative</li>
+                    <li><strong>Tenses:</strong> Present, Past, Future</li>
+                    <li><strong>Forms:</strong> Independent/Dependent (finite); Verbal Nouns, Gerunds, Passive Participles (non-finite)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 06 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Verb Conjugation Examples</div>
+                <div class="slide-body">
+                  <p><strong>Periphrasis</strong> (Verbal Noun + Auxiliary):</p>
+                  <p style="font-family:var(--font-mono);font-size:13px;background:var(--bg);padding:var(--s3);border-radius:6px;margin:var(--s3) 0;line-height:1.9;">
+                    <em>ymmyrkey</em> + <em>ta shin</em> = <strong>ta shin gymmyrkey</strong><br>
+                    &ldquo;bearing&rdquo; + &ldquo;to be&rdquo; (1pl) = &ldquo;we are bearing&rdquo;
+                  </p>
+                  <p><strong>Table for</strong> <em>ynsee</em> (to learn):</p>
+                  <ul>
+                    <li><span class="slide-tag">t&rsquo;ad gynshagey</span> they are learning</li>
+                    <li><span class="slide-tag">jean ad gynshagey?</span> will they learn?</li>
+                    <li><span class="slide-tag">jean gynshagey!</span> learn!</li>
+                    <li><span class="slide-tag">ren ad gynshagey</span> they learned</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 07 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Syntax — VSO Word Order</div>
+                <div class="slide-body">
+                  <p>Manx uses <strong>VSO (Verb-Subject-Object)</strong> order — one of the defining features of Goidelic languages:</p>
+                  <p style="font-family:var(--font-mono);font-size:13px;background:var(--bg);padding:var(--s3);border-radius:6px;margin:var(--s3) 0;line-height:2.1;">
+                    Hug &nbsp;yn &nbsp;saggyrt &nbsp;e &nbsp;laue &nbsp;urree.<br>
+                    put-PRET &nbsp;the &nbsp;priest &nbsp;his &nbsp;hand &nbsp;on her.<br>
+                    <em style="color:var(--text-secondary);">&lsquo;The priest put his hand on her.&rsquo;</em>
+                  </p>
+                  <p style="font-family:var(--font-mono);font-size:13px;background:var(--bg);padding:var(--s3);border-radius:6px;margin:var(--s3) 0;line-height:2.1;">
+                    Cha &nbsp;jarg &nbsp;shiu &nbsp;fakin &nbsp;red erbee.<br>
+                    not &nbsp;can &nbsp;you-PL &nbsp;see-V.N. &nbsp;anything.<br>
+                    <em style="color:var(--text-secondary);">&lsquo;You all can&rsquo;t see anything.&rsquo;</em>
+                  </p>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 08 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Preservation: Learning from Irish</div>
+                <div class="slide-body">
+                  <p>Can Manx be preserved like Irish? The team examined these Irish preservation tactics:</p>
+                  <ul>
+                    <li><strong>Gaelscoilenna</strong> — State-sponsored and private schools teaching Irish-based curricula</li>
+                    <li><strong>Modern Cultural Adaptation</strong> — Irish bands, artists, fashion brands, and movies centered on heritage</li>
+                    <li><strong>Regional State Agencies</strong> — Government financial and educational support to Irish-speaking regions</li>
+                  </ul>
+                  <p style="margin-top:var(--s3);">The Manx revival is already underway — with Bunscoill Ghaelgagh (Manx-medium primary school) producing new speakers. LWI&rsquo;s documentation contributes to this effort.</p>
+                </div>
+              </div>
+
+              <div class="slide-frame">
+                <div class="slide-num">Slide 09 &nbsp;/&nbsp; 09</div>
+                <div class="slide-heading">Research Paper Coverage</div>
+                <div class="slide-body">
+                  <p>The published research paper covers four areas:</p>
+                  <ul>
+                    <li><span class="slide-tag">Phonology</span> Phonemic inventory &amp; slender vs. broad consonant distinction</li>
+                    <li><span class="slide-tag">Orthography</span> Unstandardized spelling conventions &amp; sound correspondences</li>
+                    <li><span class="slide-tag">Morphology</span> Noun classes, conjugation, declension, tense-aspect-mood</li>
+                    <li><span class="slide-tag">Syntax</span> VSO sentence order, modal/auxiliary verbs, semantics</li>
+                  </ul>
+                  <p style="margin-top:var(--s3);color:var(--text-muted);font-size:13px;">Mentored by <strong style="color:var(--text);">Madeline Snigaroff</strong> (UChicago PhD Candidate): &ldquo;I am impressed at the scope and conclusions you guys draw.&rdquo;</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="slide-nav">
+            <button id="prev-btn" disabled>&#8592; Prev</button>
+            <span class="slide-counter" id="slide-counter">1 / 9</span>
+            <button id="next-btn">Next &#8594;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 3: THE CARE LAB -->
+    <div class="conf-event-block" id="care-lab">
+      <div class="conf-event-header">
+        <div class="conf-event-num">3</div>
+        <div>
+          <div class="conf-event-title">The Care Lab</div>
+          <div class="conf-event-subtitle">Community-Sourced Transcription Activity &nbsp;&middot;&nbsp; Siddharth Chopra, President</div>
+        </div>
+      </div>
+      <div class="conf-event-body">
+        <img src="./assets/images/sid_.jpeg"
+             alt="Siddharth Chopra presenting The Care Lab and IPA introduction at the conference"
+             class="conf-photo" loading="eager">
+
+        <p style="color:var(--text-secondary);line-height:1.85;font-size:15px;margin-bottom:var(--s4);">
+          For the final part of the conference, <strong>Siddharth Chopra</strong>, President, presented an intro to the <strong>International Phonetics Alphabet (IPA) and phonetics</strong>. Then, the audience was released into small groups to work on a community-sourced transcription activity &mdash; The Care Lab.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.85;font-size:15px;margin-bottom:var(--s5);">
+          Everyone used an <strong>LWI-built website</strong> that served as an interactive tool for transcription. The website provides audio recordings of under-resourced or endangered languages. Users enter their suggested &ldquo;solution&rdquo; for the transcription. Their entry is saved to a database which we are using to build a pool of community-sourced transcriptions and documentation.
+        </p>
+
+        <a href="https://carelab-v3.vercel.app/" target="_blank" rel="noopener" class="carelab-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none"><path d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          carelab-v3.vercel.app &nbsp;&rarr;&nbsp; Try the tool
+        </a>
+      </div>
+    </div>
+
+    <!-- HOLLADAY HANDOUT (full embed at bottom) -->
+    <div id="holladay-material" style="margin-top:var(--s8);">
+      <span class="section-eyebrow">Materials</span>
+      <h3 style="font-size:22px;font-weight:700;color:var(--text);margin:var(--s3) 0 var(--s4);">Dr. Holladay&rsquo;s Handout — Full Document</h3>
+      <div class="handout-embed">
+        <div class="handout-bar">
+          <span class="handout-bar-label">holladay-handout.pdf &mdash; Incorporation and Meaning in Eskimoan (Harvard, 04/05/26)</span>
+          <a href="./assets/docs/holladay-handout.pdf" target="_blank" rel="noopener">Open in new tab &rarr;</a>
+        </div>
+        <iframe
+          src="./assets/docs/holladay-handout.pdf"
+          width="100%"
+          height="640"
+          style="border:0;display:block;"
+          title="Dr. Holladay Handout — Incorporation and Meaning in Eskimoan"
+        ></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACADEMIC PARTNERS -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Where Our PhD Mentors &amp; Speakers Are From</span>
+      <h2 class="section-title">Where Our PhD Mentors <h2 class="section-title">Mentored &amp; Reviewed by Leading Scholars</h2>amp; Speakers Are From</h2>
+      <p class="section-desc">We are a student-run organization that works with faculty and PhD researchers from some of the world&rsquo;s best research universities. Our student research teams are paired with PhD mentors who review, guide, and in some cases co-publish their work.</p>
+    </div>
+    <div class="uni-logo-row" style="justify-content:center;">
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=uchicago.edu&sz=64" alt="UChicago" loading="lazy"><span>University of Chicago</span></div>
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=upenn.edu&sz=64" alt="UPenn" loading="lazy"><span>University of Pennsylvania</span></div>
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=umass.edu&sz=64" alt="UMass" loading="lazy"><span>UMass Amherst</span></div>
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=bu.edu&sz=64" alt="BU" loading="lazy"><span>Boston University</span></div>
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=yale.edu&sz=64" alt="Yale" loading="lazy"><span>Yale University</span></div>
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=umich.edu&sz=64" alt="UMichigan" loading="lazy"><span>University of Michigan</span></div>
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=harvard.edu&sz=64" alt="Harvard" loading="lazy"><span>Harvard University</span></div>
+      <div class="uni-logo-chip"><img src="https://www.google.com/s2/favicons?domain=northeastern.edu&sz=64" alt="Northeastern" loading="lazy"><span>Northeastern University</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="https://image.typedream.com/cdn-cgi/image/width=640,format=auto,fit=scale-down,quality=100/https://api.typedream.com/v0/document/public/0dffe836-4bc7-4b15-8adf-949122a68dd0/2zkkdHaUALvuPTryIToyD7zg3Kh_Long_FullLogo_LWI.png" alt="Lost Worlds Institute" style="height:36px;margin-bottom:var(--s4);object-fit:contain;" loading="lazy">
+        <p class="footer-desc">LWI is a youth-led non-profit that is set on preserving endangered languages and revitalizing extinct ones through scholarly documentation, research, writing, and more.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdaVvsbVqMNg6_X9I9S-bD2Nb6Xi8bpyO9LAMc37hfxr2jvyQ/viewform" target="_blank" rel="noopener" class="footer-email">Apply to Join &rarr;</a>
+      </div>
+      <div class="footer-col"><h4>Organization</h4><ul class="footer-links"><li><a href="./mission.html">Mission</a></li><li><a href="./about.html">About</a></li><li><a href="./impact.html">Impact</a></li><li><a href="./conference.html">Conference</a></li></ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul class="footer-links"><li><a href="./events.html">Events</a></li><li><a href="https://www.lostworldsmag.com/" target="_blank" rel="noopener">Magazine</a></li><li><a href="./resources.html">Resources</a></li></ul></div>
+      <div class="footer-col"><h4>Languages</h4><ul class="footer-links"><li><a href="./resources.html">Taa</a></li><li><a href="./resources.html">Yuchi</a></li><li><a href="./resources.html">Warlpiri</a></li><li><a href="./resources.html">Manx</a></li><li><a href="./resources.html">Wampanoag</a></li><li><a href="./resources.html">Wukchumni</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Lost Worlds Institute, LLC. All rights reserved.</span>
+      <div class="footer-socials"><a href="https://www.instagram.com/lostworldsinstitute/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+<script>
+  // Slide viewer
+  const track = document.getElementById('slide-track');
+  const frames = track ? track.querySelectorAll('.slide-frame') : [];
+  const total = frames.length;
+  let cur = 0;
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const counter = document.getElementById('slide-counter');
+  const dotsEl = document.getElementById('slide-dots');
+
+  if (total > 0) {
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('div');
+      d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    }
+    function goTo(n) {
+      cur = Math.max(0, Math.min(n, total - 1));
+      track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+      counter.textContent = (cur + 1) + ' / ' + total;
+      prevBtn.disabled = cur === 0;
+      nextBtn.disabled = cur === total - 1;
+      dotsEl.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+    prevBtn.addEventListener('click', () => goTo(cur - 1));
+    nextBtn.addEventListener('click', () => goTo(cur + 1));
+    goTo(0);
+  }
+</script>
+</body>
+</html>
